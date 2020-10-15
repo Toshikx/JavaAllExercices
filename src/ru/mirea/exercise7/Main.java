@@ -11,19 +11,18 @@ public class Main {
         plate.calcVolume();
         ((Pan)pan).makeBorsh();
 
-<<<<<<< HEAD
+
         Chihua_Hua chibi = new Chihua_Hua("Chibi", 15);
         System.out.println(((Chihua_Hua)chibi));
         chibi.bark();
 
         Haski korj = new Haski("Korj", 2);
         korj.bark();
-=======
+
         ArrayList<Dish> allDishes = new ArrayList<>();
         allDishes.add(plate);
         allDishes.add(pan);
 
->>>>>>> master
 
     }
 }
