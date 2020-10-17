@@ -12,17 +12,28 @@ public class Main {
         ((Pan)pan).makeBorsh();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
         Chihua_Hua chibi = new Chihua_Hua("Chibi", 15);
         System.out.println(((Chihua_Hua)chibi));
         chibi.bark();
 
         Haski korj = new Haski("Korj", 2);
         korj.bark();
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> master
         ArrayList<Dish> allDishes = new ArrayList<>();
         allDishes.add(plate);
         allDishes.add(pan);
 
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 
     }
