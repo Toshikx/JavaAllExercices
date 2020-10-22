@@ -1,26 +1,13 @@
 package ru.mirea.exercies9and10;
 
+import java.util.Objects;
+
 public class Employee implements EmployeePosition {
-    String name, surname, position;
-    double baseSalary;
-    public Employee () {};
-    public Employee(String name, String surname, double baseSalary, String position) {
-        this.name = name;
-        this.surname = surname;
-        this.baseSalary = baseSalary;
-        this.position = position;
-    }
+    private String surname;
+    private String name;
 
     public Employee(String name, String surname) {
-        this.name = name;
         this.surname = surname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 
@@ -28,43 +15,36 @@ public class Employee implements EmployeePosition {
         return surname;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    public double getBaseSalary() {
-        return baseSalary;
-    }
-
-    public void setBaseSalary(double baseSalary) {
-        this.baseSalary = baseSalary;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
-    public String getJobTitel() {
-        return this.getPosition();
+    public String getJobTitle() {
+        return null;
     }
 
     @Override
     public double calcSalary(double baseSalary) {
-        return this.getBaseSalary();
+        return baseSalary;
+    }
+
+    public boolean equals(Employee o) {
+        if (this.hashCode() == o.hashCode()) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        return  false;
     }
 
     @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", position='" + position + '\'' +
-                ", baseSalary=" + baseSalary +
-                '}';
+    public int hashCode() {
+        return name.hashCode() +  surname.hashCode();
     }
 }

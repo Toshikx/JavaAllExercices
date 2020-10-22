@@ -2,24 +2,43 @@ package ru.mirea.exercies9and10;
 
 import java.util.Random;
 
-public class Manager extends Employee implements EmployeePosition {
-    public Manager(String name, String surname, double baseSalary, String position) {
-        super(name, surname, baseSalary, position);
+public class Manager extends Employee implements EmployeePosition{
+    private int personalIncome;
+    public Manager(String name,String Surname) {
+        super(name, Surname);
+        Random random= new Random();
+        personalIncome=random.nextInt(140-115+1);
     }
-    public int peronalIncome;
-    public Manager(String name, String surname) {
-        super(name, surname);
+
+    @Override
+    public String getSurname() {
+        return super.getSurname();
     }
-    public int getRandomSalary(int min, int max) {
-        Random rand = new Random();
-        return rand.nextInt(max - min) + min;
+
+    @Override
+    public String getName() {
+        return super.getName();
     }
-    public String getJobTitel() {
-        return this.position;
+
+    @Override
+    public String getJobTitle() {
+        return ("Manager");
     }
+
+    @Override
     public double calcSalary(double baseSalary) {
-        return (getRandomSalary(140000, 115000) * 1.05);
+
+        return (baseSalary+(personalIncome*1000)*0.05);
     }
 
 
+    @Override
+    public void setSurname(String surname) {
+        super.setSurname(surname);
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name);
+    }
 }

@@ -1,15 +1,22 @@
 package ru.mirea.exercies9and10;
 
-public class TopManager extends Manager implements EmployeePosition{
-    public TopManager(String name, String surname, double baseSalary, String position) {
-        super(name, surname, baseSalary, position);
+public class TopManager extends Employee implements EmployeePosition {
+    private int Income;
+
+    public TopManager(String name, String surname,int income) {
+        super(name, surname);
+        Income = income;
     }
-    public String getJobTitel() {
-        return this.getPosition();
+
+    @Override
+    public String getJobTitle() {
+        return "TopManager";
     }
+
+    @Override
     public double calcSalary(double baseSalary) {
-        return (this.getBaseSalary() * 1.5);
+        if (Income > 100000000) {
+            return baseSalary + baseSalary * 1.5;
+        } else return baseSalary;
     }
-
-
 }
