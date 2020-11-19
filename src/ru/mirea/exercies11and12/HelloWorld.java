@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.Group;
 import javafx.scene.text.Text;
 
-public class Counter extends Application{
+public class HelloWorld extends Application{
 
     public static void main(String[] args) {
 
